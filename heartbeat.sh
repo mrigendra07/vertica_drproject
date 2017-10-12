@@ -156,12 +156,12 @@ function update_internal_config_file(){
 	# if any change is done in external configuration file                 #
 	#                                                                      #
 	# External configuration file:                                         #
-	# 	Configuration file that user edits as per requirement              #
+	# 	Configuration file that user edits as per requirement          #
 	# Internal configuration file:                                         #
-	#	Configuration file that is used only by application.               #
-	#	This file have same values corresponding to the external           #
-	#	configuration file but the key may be different which only         #
-	#	an application may understand                                      #
+	#	Configuration file that is used only by application.           #
+	#	This file have same values corresponding to the external       #
+	#	configuration file but the key may be different which only     #
+	#	an application may understand                                  #
 	########################################################################
 	for _key in ${CONFIG_FILE_KEYS[@]}; do
 		_cur_val=$( cat ${STATUSFILE_ABS_F} | grep ${_key}|cut -d'=' -f2|head -n1 2>/dev/null)
@@ -210,34 +210,6 @@ fi
 #
 logger "dr replication daemon started successfully"
 logger "logging module initialized"
-
-############################################ debug code ###############################################################
-echo  "cur dir                :"`pwd`                     > /tmp/drsetup.txt
-echo  "BASE_DIR               :"$BASE_DIR                >> /tmp/drsetup.txt
-echo  "SCRIPT_NAME            :"$SCRIPT_NAME             >> /tmp/drsetup.txt
-echo  "TMP_DIR                :"$TMP_DIR                 >> /tmp/drsetup.txt
-echo  "DEVNULL                :"$DEVNULL                 >> /tmp/drsetup.txt
-echo  "DEFAULT_SLEEPTIMESEC   :"$DEFAULT_SLEEPTIMESEC    >> /tmp/drsetup.txt
-echo  "SLEEPTIMESEC           :"$SLEEPTIMESEC            >> /tmp/drsetup.txt
-echo  "CONFIG_FILE            :"$CONFIG_FILE             >> /tmp/drsetup.txt
-echo  "DAEMON_LOG_FILE        :"$DAEMON_LOG_FILE         >> /tmp/drsetup.txt
-echo  "ENV_INFOFILE           :"$ENV_INFOFILE            >> /tmp/drsetup.txt
-echo  "STATUSFILE             :"$STATUSFILE              >> /tmp/drsetup.txt
-echo  "STATUSFILE_ABS_F       :"$STATUSFILE_ABS_F        >> /tmp/drsetup.txt
-echo  "STDOUTFILE             :"$STDOUTFILE              >> /tmp/drsetup.txt
-echo  "STDERRFILE             :"$STDERRFILE              >> /tmp/drsetup.txt
-echo  "CONSTANTS              :"$CONSTANTS               >> /tmp/drsetup.txt
-echo  "STATUS_LOG_HANDLER     :"$STATUS_LOG_HANDLER      >> /tmp/drsetup.txt
-echo  "TRANSFER_REQ_HANDLER   :"$TRANSFER_REQ_HANDLER    >> /tmp/drsetup.txt
-echo  "TRANSFER_INIT_HANDLER  :"$TRANSFER_INIT_HANDLER   >> /tmp/drsetup.txt
-echo  "TRANSFER_PRE_PROCESSOR :"$TRANSFER_PRE_PROCESSOR  >> /tmp/drsetup.txt
-echo  "TRANSFER_ENGINE        :"$TRANSFER_ENGINE         >> /tmp/drsetup.txt
-echo  "CONFIG_FILE_KEYS       :"${CONFIG_FILE_KEYS[@]}   >> /tmp/drsetup.txt
-echo  "CONFIG_FILE            :"$CONFIG_FILE             >> /tmp/drsetup.txt
-echo  "EX_MODE                :"$EX_MODE                 >> /tmp/drsetup.txt
-#exit 0
-######################################### eof debug code ##############################################################
-
 while true; do
 	#
 	# Daemon components execution here
