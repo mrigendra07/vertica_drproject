@@ -1,0 +1,20 @@
+# Remaining for demo:
+# 1.
+# 2.
+# 3.
+
+# Known issues
+# 1. configuration file path issue while updating  internal config file,
+#    when heartbeat daemon changes its current location to /
+# 2. debug mode on/off from config file
+# 3. debug file/stdout/errfile archive
+
+
+
+########################################################################
+# Abbreviations
+########################################################################
+
+OT_TS_DIR
+OT_TS_ABS_DIR
+

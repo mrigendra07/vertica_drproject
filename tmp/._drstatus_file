@@ -1,0 +1,5 @@
+log_file=/tmp/dr.log
+daemon_sleep_time=17
+transfer_status_base=tmp/drstatus
+parallel_transfer=1
+configfile=

@@ -1,0 +1,22 @@
+#######################################################################
+# 					Vertica infrastructure
+#----------------------------------------------------------------------
+# 1. Contains passwords associated with database user.
+# 2. All item and value name should be in upper case
+# 3. Change in format of any section may lead to application
+#    producing invalid outputs
+# 4. Note:
+#    All formats and object's name are strictly dependable. Modification
+#    should be done carefully
+#
+#######################################################################
+#
+#### Specify mapping between database, database user and password
+	typeset -A db_password
+	db_password[DW_DBA_1_DRSYNC]=""
+	db_password[DW_DBA_2_DRSYNC]=""
+
+	db_password[DW_PROD_1_DRSYNC]=""
+        db_password[DW_DR_1_DRSYNC]=""
+
+

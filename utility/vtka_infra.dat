@@ -1,0 +1,138 @@
+#######################################################################
+# 					Vertica infrastructure
+#----------------------------------------------------------------------
+# 1. This file contains all the required information to establish
+#    database connection successfully.
+# 2. All item and value name should be in upper case
+# 3. Change in format of any section may lead to application
+#    producing invalid outputs
+# 4. Note:
+#    All formats and object's name are strictly dependable. Modification
+#    should be done carefully
+#
+# Note to developer: - multidimensional array is not supported in bash
+#                    - i.e array inside array is not supported
+#######################################################################
+#
+#####Vertica cluster group and cluster names
+production_cluster_group="PROD_VERTICA_CLUSTER"
+dr_cluster_group="DR_VERTICA_CLUSTER"
+dev_cluster_group="DEV_VERTICA_CLUSTER"
+qa_cluster_group="QA_VERTICA_CLUSTER"
+dbadev_cluster_group="DBADEV_VERTICA_CLUSTER"
+production_a="PROD_A"
+production_b="PROD_B"
+production_c="PROD_C"
+dr_a="DR_A"
+dr_b="DR_B"
+dr_c="DR_C"
+dev_a="DEV_A"
+dev_b="DEV_B"
+qa_a="QA_A"
+qa_b="QA_B"
+dba_a="DBA_A"
+dba_b="DBA_B"
+#
+#####VERTICA CLUSTER GROUPS
+CLUSTER_GROUPS=(
+	PROD_VERTICA_CLUSTER
+	DR_VERTICA_CLUSTER
+	DEV_VERTICA_CLUSTER
+	QA_VERTICA_CLUSTER
+	DBA_VERTICA_CLUSTER
+)
+#
+#####VERTICA CLUSTERS
+PROD_VERTICA_CLUSTER=(
+	${production_a}
+	${production_b}
+	${production_c}
+)
+DR_VERTICA_CLUSTER=(
+	${dr_a}
+	${dr_b}
+	${dr_c}
+)
+DEV_VERTICA_CLUSTER=(
+	${dev_a}
+	${dev_b}
+)
+QA_VERTICA_CLUSTER=(
+	${qa_a}
+	${qa_b}
+)
+DBA_VERTICA_CLUSTER=(
+	${dba_a}
+	${dba_b}
+)
+#######################################################################
+# VERTICA DATABASE CREDENTIALS MAPPING
+#######################################################################
+#
+#### Specify mapping cluster and vips
+#### Do not add domain part in VIP name
+	typeset -A VIP
+	# prod
+	VIP[${production_a}]=""
+	VIP[${production_b}]=""
+	VIP[${production_c}]=""
+	# prod-dr
+	VIP[${dr_a}]=""
+	VIP[${dr_b}]=""
+	VIP[${dr_c}]=""
+	# dev
+	VIP[${dev_a}]=""
+	VIP[${dev_b}]=""
+	# qa
+	VIP[${qa_a}]=""
+	VIP[${qa_b}]=""
+	# dba dev
+	VIP[${dba_a}]=""
+	VIP[${dba_b}]=""
+
+#
+#### Specify mapping cluster and database name
+	typeset -A database
+	# prod
+	database[${production_a}]=""
+	database[${production_b}]=""
+	database[${production_c}]=""
+	# prod-dr
+	database[${dr_a}]=""
+	database[${dr_b}]=""
+	database[${dr_c}]=""
+	# dev
+	database[${dev_a}]=""
+	database[${dev_b}]=""
+	# qa
+	database[${qa_a}]=""
+	database[${qa_b}]=""
+	# dba dev
+	database[${dba_a}]=""
+	database[${dba_b}]=""
+	#
+	# Specify mapping vip and database
+	# prod
+
+
+#######################################################################
+# TRANSFER MAPPING
+#----------------------------------------------------------------------
+# This section provides the schema transfer mapping between source
+# VIP and destination VIP.
+#
+# Note:
+#     This section should be modified as per requirement
+#######################################################################
+	typeset -A transfer
+	# prod
+
+
+#######################################################################
+# ORACLE CONNECTION
+#######################################################################
+orcl_host=''
+orcl_port=''
+orcl_service=''
+orcl_user=''
+orcl_pwd=''
