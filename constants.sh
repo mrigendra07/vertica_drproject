@@ -36,7 +36,7 @@ ENGN_LOCKACTION_ADD_STR="add_engine_lf"
 ENGN_LOCKACTION_DEL_STR="del_engine_lf"
 #
 # jobs
-iJOBS_MAX_RETRYLIMIT=1
+JOBS_MAX_RETRYLIMIT=1
 # jobs directory
 JOB_DIR="jobs"
 JOBS_HOME="${BASE_DIR}/${JOB_DIR}"   ## may need to verify empty $BASE_DIR
