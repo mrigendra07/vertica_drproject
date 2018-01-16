@@ -206,15 +206,14 @@ function parse_opts {
 			h)
 				usage_exit0
 				;;
-			*)
-				echo '-'${OPTARG}" not a valid argument"
-				usage_exit1
-				;;
 			:)
 				echo "Option -${OPTARG} requires an argument"
 				usage_exit1
 				;;
-
+			*)
+				echo '-'${OPTARG}" not a valid argument"
+				usage_exit1
+				;;
 			\?)
 				usage_exit1
 				;;
